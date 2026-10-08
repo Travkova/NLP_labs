@@ -28,7 +28,6 @@ def get_valid_analyses(word):
         if "Apro" in parsed.tag or "Anum" in parsed.tag:
             continue
         
-        # Фильтр по score вместо длины
         if parsed.score < 0.01:
             continue
         
