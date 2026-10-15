@@ -4,7 +4,7 @@ import pymorphy3
 
 nltk.download('punkt_tab', quiet=True)
 
-with open("text.txt", "r", encoding="utf-8") as f:
+with open("input.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 sentences = sent_tokenize(text)
