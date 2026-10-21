@@ -17,7 +17,7 @@ for sent in sentences:
 morph = pymorphy3.MorphAnalyzer()
 
 def get_valid_analyses(word):
-    """Возвращает список подходящих морфологических разборов слова"""
+    """Функция получения подходящих морфологических разборов слова"""
     results = []
     for parsed in morph.parse(word):
         pos = parsed.tag.POS
@@ -42,7 +42,7 @@ def get_valid_analyses(word):
     return results
 
 def check_match(a1, a2):
-    """Функция проверки согласованности"""
+    """Функция проверки согласованности по числу, падежу и роду"""
     if a1['number'] != a2['number']:
         return False
     if a1['case'] != a2['case']:
