@@ -2,16 +2,19 @@ import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 import pymorphy3
 
+nltk.download('punkt', quiet=True)
 nltk.download('punkt_tab', quiet=True)
 
-with open("input.txt", "r", encoding="utf-8") as f:
+with open("text.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 sentences = sent_tokenize(text)
 all_tokens = []
 for sent in sentences:
     tokens = word_tokenize(sent)
+    print(f"После токенизации: {tokens}")
     words = [t for t in tokens if t.isalpha()]
+    print(f"После фильтрации: {words}")
     all_tokens.append(words)
 
 morph = pymorphy3.MorphAnalyzer()
